@@ -29,7 +29,7 @@ module.exports = (robot) ->
   twit = undefined
 
   robot.respond /what does vedmic say/, (res) ->
-    res.reply "stuff"
+    res.send "stuff"
     # unless auth.consumer_key
     #   msg.send "Please set the HUBOT_TWITTER_CONSUMER_KEY environment variable."
     #   return
