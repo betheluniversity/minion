@@ -5,6 +5,8 @@
   "author": "Eric Jameson <e-jameson@bethel.edu>",
   "description": "A simple helpful robot for your Company",
   "dependencies": {
+    "cheerio": "0.15.0",
+    "cookies": "0.1.x",
     "hubot": "^2.13.0",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.1.4",
@@ -19,8 +21,10 @@
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.3.0",
     "hubot-youtube": "^0.1.2",
-    "ntwitter": "0.2.10"
-
+    "keygrip": "0.2.x",
+    "ntwitter": "0.2.10",
+    "oauth": ">=0.8.4",
+    "request": "2.30.0"
   },
   "engines": {
     "node": "0.10.x"

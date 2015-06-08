@@ -18,5 +18,5 @@
 
 module.exports = (robot) ->
 
-  robot.hear /what does vedmic say/, (res) ->
+  robot.hear /vedmic/, (res) ->
     res.send "stuff"
