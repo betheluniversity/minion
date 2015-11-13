@@ -24,7 +24,8 @@
     "keygrip": "0.2.x",
     "ntwitter": "0.2.10",
     "oauth": ">=0.8.4",
-    "request": "2.30.0"
+    "request": "2.30.0",
+    "hubot-deploy": "0.10.4"
   },
   "engines": {
     "node": "0.10.x"

@@ -1,0 +1,17 @@
+{
+  "tinker": {
+    "provider": "heroku",
+    "auto_merge": true,
+    "repository": "betheluniversity/tinker-heroku",
+    "environments": ["production"],
+
+    "heroku_production_name": "bu-tinker"
+  },
+  "minion": {
+    "provider": "heroku",
+    "auto_merge": true,
+    "repository": "betheluniversity/minion",
+    "environments": ["production"],
+    "heroku_production_name": "bu-minion"
+  }
+}
