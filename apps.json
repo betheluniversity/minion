@@ -13,5 +13,12 @@
     "repository": "betheluniversity/minion",
     "environments": ["production"],
     "heroku_production_name": "bu-minion"
+  },
+  "yourself": {
+    "provider": "heroku",
+    "auto_merge": true,
+    "repository": "betheluniversity/minion",
+    "environments": ["production"],
+    "heroku_production_name": "bu-minion"
   }
 }
