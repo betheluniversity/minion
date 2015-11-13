@@ -7,6 +7,7 @@
 
     "heroku_production_name": "bu-tinker"
   },
+
   "minion": {
     "provider": "heroku",
     "auto_merge": true,
@@ -14,6 +15,7 @@
     "environments": ["production"],
     "heroku_production_name": "bu-minion"
   },
+
   "yourself": {
     "provider": "heroku",
     "auto_merge": true,
