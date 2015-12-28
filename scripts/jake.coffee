@@ -20,8 +20,6 @@ module.exports = (robot) ->
     name = res.message.user.name.toLowerCase()
     url = res.match[1]
 
-    res.send url
-
     expression = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/i;
     regex = new RegExp(expression);
 
@@ -30,3 +28,5 @@ module.exports = (robot) ->
       # res.send "heard gif from " + name + "( " + url + ")"
       erics = robot.brain.get('erics')
       res.send erics
+    else
+      res.send "no match " + name
