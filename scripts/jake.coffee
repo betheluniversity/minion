@@ -6,7 +6,7 @@ module.exports = (robot) ->
     erics = "" if not erics
     erics = erics.split(':::')
     index = erics.indexOf(url)
-    if url < 0
+    if index < 0
       erics.append(url)
       erics = erics.join(":::")
       robot.brain.set 'erics', erics
@@ -27,6 +27,6 @@ module.exports = (robot) ->
       eric_gif(url)
       # res.send "heard gif from " + name + "( " + url + ")"
       erics = robot.brain.get('erics')
-      res.send erics
+      res.send "erics " + erics
     else
       res.send "no match " + name
