@@ -7,7 +7,7 @@ module.exports = (robot) ->
     erics = erics.split(':::')
     index = erics.indexOf(url)
     if index < 0
-      erics.append(url)
+      erics.push(url)
       erics = erics.join(":::")
       robot.brain.set 'erics', erics
 
