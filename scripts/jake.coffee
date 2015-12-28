@@ -3,7 +3,7 @@ module.exports = (robot) ->
 
   eric_gif = (url) ->
     erics = robot.brain.get('erics')
-    erics = "" if not erics
+    erics = url if not erics
     erics = erics.split(':::')
     index = erics.indexOf(url)
     if index < 0
@@ -16,6 +16,11 @@ module.exports = (robot) ->
     robot.brain.set 'jakes', jakes+1
     res.send "jake gif " + jakes
 
+  robot.respond /eric me/i, (res) ->
+    erics = robot.brain.get('erics')
+    erics = erics.split(':::')
+    res.send res.random erics
+
   robot.hear /(.+.gif)/i, (res) ->
     name = res.message.user.name.toLowerCase()
     url = res.match[1]
@@ -27,6 +32,3 @@ module.exports = (robot) ->
       eric_gif(url)
       # res.send "heard gif from " + name + "( " + url + ")"
       erics = robot.brain.get('erics')
-      res.send "erics " + erics
-    else
-      res.send "no match " + name
