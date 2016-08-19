@@ -4,7 +4,6 @@
     "auto_merge": true,
     "repository": "betheluniversity/tinker-heroku",
     "environments": ["production"],
-
     "heroku_production_name": "bu-tinker"
   },
 
@@ -13,7 +12,8 @@
     "auto_merge": true,
     "repository": "betheluniversity/minion",
     "environments": ["production"],
-    "heroku_production_name": "bu-minion"
+    "heroku_production_name": "bu-minion",
+    "heroku__name": "bu-minion"
   },
 
   "yourself": {
@@ -21,6 +21,7 @@
     "auto_merge": true,
     "repository": "betheluniversity/minion",
     "environments": ["production"],
-    "heroku_production_name": "bu-minion"
+    "heroku_production_name": "bu-minion",
+    "heroku__name": "bu-minion"
   }
 }
