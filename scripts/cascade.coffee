@@ -17,7 +17,24 @@ module.exports = (robot) ->
           robot.emit 'error', err, rs
           return
         #res.send "#{body}"
-         robot.emit 'slack-attachment',
-          message:
-            room: msg.message.room
-          content: body
+        # create the message with attachment object
+        msgData = {
+          channel: res.message.room
+          text: "Cascade Status"
+          attachments: [
+            {
+              fallback: "",
+              title: "Cascade Status"
+              title_link: ""
+              text: body
+              mrkdwn_in: ["text"]
+            }
+          ]
+        }
+
+        # post the message
+        robot.adapter.customMessage msgData
+        # robot.emit 'slack-attachment',
+        # message:
+        #   room: msg.message.room
+        # content: body
