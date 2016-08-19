@@ -16,25 +16,4 @@ module.exports = (robot) ->
           rs.reply "Unable to load status from Cascade. Is it down?"
           robot.emit 'error', err, rs
           return
-        #res.send "#{body}"
-        # create the message with attachment object
-        msgData = {
-          channel: res.message.room
-          text: "Cascade Status"
-          attachments: [
-            {
-              fallback: "",
-              title: "Cascade Status"
-              title_link: ""
-              text: body
-              mrkdwn_in: ["text"]
-            }
-          ]
-        }
-
-        # post the message
-        robot.adapter.customMessage msgData
-        # robot.emit 'slack-attachment',
-        # message:
-        #   room: msg.message.room
-        # content: body
+        res.send "#{body}"
