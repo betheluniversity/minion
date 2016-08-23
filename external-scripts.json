@@ -10,5 +10,6 @@
   "hubot-shipit",
   "hubot-youtube",
   "hubot-heroku-keepalive",
-  "hubot-deploy"
+  "hubot-deploy",
+  "hubot-plusplus"
 ]
