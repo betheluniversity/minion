@@ -11,5 +11,6 @@
   "hubot-youtube",
   "hubot-heroku-keepalive",
   "hubot-deploy",
-  "hubot-plusplus"
+  "hubot-plusplus",
+  "hubot-redis-brain"
 ]
