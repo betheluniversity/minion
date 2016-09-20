@@ -17,3 +17,12 @@ module.exports = (robot) ->
           robot.emit 'error', err, rs
           return
         res.send "#{body}"
+
+  robot.respond /cascade workflows/i, (res) ->
+    robot.http("https://wsapi.bethel.edu/cascade/workflows")
+      .get() (err, rs, body) ->
+        if err
+          rs.reply "Unable to load status from Cascade. Is it down?"
+          robot.emit 'error', err, rs
+          return
+        res.send "#{body}"
