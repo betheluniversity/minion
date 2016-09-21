@@ -16,7 +16,19 @@ module.exports = (robot) ->
           rs.reply "Unable to load status from Cascade. Is it down?"
           robot.emit 'error', err, rs
           return
-        res.send "#{body}"
+        res.send({
+            attachments: [{
+                title: 'Cascade Status',
+                fallback: 'Cascade Status',
+                fields: [{
+                    title: "Status",
+                    value: "#{body}",
+                    short: false
+                }],
+            }],
+            username: process.env.HUBOT_SLACK_BOTNAME,
+            as_user: true,
+        });
 
   robot.respond /cascade workflows/i, (res) ->
     robot.http("https://wsapi.bethel.edu/cascade/workflows")
