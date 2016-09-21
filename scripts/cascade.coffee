@@ -18,8 +18,6 @@ module.exports = (robot) ->
           return
         res.send "#{body}"
 
-
-module.exports = (robot) ->
   robot.respond /cascade workflows/i, (res) ->
     robot.http("https://wsapi.bethel.edu/cascade/workflows")
       .get() (err, rs, body) ->
