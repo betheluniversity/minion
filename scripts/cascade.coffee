@@ -17,18 +17,23 @@ module.exports = (robot) ->
           robot.emit 'error', err, rs
           return
         res.send({
-            attachments: [{
-                title: 'Cascade Status',
-                fallback: 'Cascade Status',
-                fields: [{
-                    title: "Status",
-                    value: "#{body}",
-                    short: false
-                }],
-            }],
-            username: process.env.HUBOT_SLACK_BOTNAME,
-            as_user: true,
-        });
+            "attachments": [
+                {
+                    "fallback": "Cascade Status",
+                    "color": "#36a64f",
+                    "author_name": "Minion",
+                    "title": "Cascade Status",
+                    "title_link": "https://api.slack.com/",
+                    "fields": [
+                      {
+                        "title": "Status",
+                        "value": "#{body}",
+                        "short": false
+                      }
+                    ]
+                }
+            ]
+          });
 
   robot.respond /cascade workflows/i, (res) ->
     robot.http("https://wsapi.bethel.edu/cascade/workflows")
