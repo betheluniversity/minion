@@ -16,30 +16,18 @@ module.exports = (robot) ->
           rs.reply "Unable to load status from Cascade. Is it down?"
           robot.emit 'error', err, rs
           return
-        res.send({
-            "attachments": [
-                {
-                    "fallback": "Cascade Status",
-                    "color": "#36a64f",
-                    "author_name": "Minion",
-                    "title": "Cascade Status",
-                    "title_link": "https://api.slack.com/",
-                    "fields": [
-                      {
-                        "title": "Status",
-                        "value": "#{body}",
-                        "short": false
-                      }
-                    ]
-                }
-            ]
-          });
+        res.send "#{body}"
+
 
   robot.respond /cascade workflows/i, (res) ->
-    robot.http("https://wsapi.bethel.edu/cascade/workflows")
-      .get() (err, rs, body) ->
-        if err
-          rs.reply "Unable to load status from Cascade. Is it down?"
-          robot.emit 'error', err, rs
-          return
-        res.send "#{body}"
+    res.send({
+      "attachments": [
+          {
+              "fallback": "Cascade Status",
+              "color": "#36a64f",
+              "author_name": "Minion",
+              "title": "Workflow Status",
+              "title_link": "https://wsapi.bethel.edu/cascade/workflows"
+          }
+      ]
+    })
