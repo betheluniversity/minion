@@ -12,5 +12,10 @@
   "hubot-heroku-keepalive",
   "hubot-deploy",
   "hubot-plusplus",
-  "hubot-redis-brain"
+  "hubot-redis-brain",
+  "hubot-business-cat",
+  "hubot-tell",
+  "hubot-motivate",
+  "hubot-hearthstone",
+  "hubot-leaderboard" 
 ]
